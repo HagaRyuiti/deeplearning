@@ -1,7 +1,11 @@
 import numpy as np
-x = np.array([0, 1])
-w = np.array([0.5, 0.5])
-b = -0.7
-print(w * x)
-print(np.sum(w * x))
-print(np.sum(w * x + b))
+import matplotlib.pylab as plt
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+x = np.arange(-5.0, 5.0, 0.1)
+y = sigmoid(x)
+plt.plot(x, y)
+plt.ylim(-0.1, 1.1)
+plt.show()
